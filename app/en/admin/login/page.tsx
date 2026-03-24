@@ -1,5 +1,5 @@
 import { AdminLoginPage } from "@/components/admin-login-page";
 
 export default function Page() {
-  return <AdminLoginPage lang="uk" />;
+  return <AdminLoginPage lang="en" />;
 }

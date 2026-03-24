@@ -1,24 +1,43 @@
+import { Lang } from "@/lib/i18n";
+
+type LocalizedText = Record<Lang, string>;
+
 export type BlogPost = {
   slug: string;
-  title: string;
-  excerpt: string;
-  category: string;
+  title: LocalizedText;
+  excerpt: LocalizedText;
+  category: LocalizedText;
   publishedAt: string;
-  readTime: string;
-  imageAlt: string;
-  heroClassName: string;
-  content: string[];
+  readTime: LocalizedText;
+  imageAlt: LocalizedText;
+  imageSrc: string;
+  content: LocalizedText[];
   featured?: boolean;
 };
 
 export const site = {
-  name: "PRO PEOPLE",
-  tagline: "Community organization for people in and for Ukraine",
-  mission:
-    "We connect volunteers, communities, and local initiatives so support reaches people with clarity, dignity, and continuity.",
+  name: {
+    uk: "ГО «Proлюдей»",
+    en: "NGO Pro People",
+  },
+  brandShort: {
+    uk: "PRO людей",
+    en: "PRO PEOPLE",
+  },
+  tagline: {
+    uk: "Допомога військовим | Соціальні проєкти | Інформаційна підтримка | Одеса-Миколаїв",
+    en: "Military aid | Social projects | Information support | Odesa-Mykolaiv",
+  },
+  mission: {
+    uk: "Ми об'єднуємо людей, волонтерів і локальні ініціативи, щоб підтримка доходила швидко, гідно та без зайвого шуму.",
+    en: "We connect people, volunteers, and local initiatives so support reaches communities quickly, clearly, and with dignity.",
+  },
   email: "hello@propeople.org.ua",
   phone: "+380 67 555 01 21",
-  address: "Kyiv, Ukraine",
+  address: {
+    uk: "Одеса - Миколаїв, Україна",
+    en: "Odesa - Mykolaiv, Ukraine",
+  },
   socials: [
     { label: "Instagram", href: "https://instagram.com" },
     { label: "Facebook", href: "https://facebook.com" },
@@ -26,83 +45,205 @@ export const site = {
   ],
 };
 
+export const homepage = {
+  eyebrow: {
+    uk: "Громадська організація для людей в Україні",
+    en: "Community organization for people in Ukraine",
+  },
+  heroTitle: {
+    uk: "PRO людей",
+    en: "PRO PEOPLE",
+  },
+  heroSummary: {
+    uk: "Підтримуємо військових, розвиваємо соціальні проєкти та даємо інформаційну опору тим, хто тримається поруч із громадами півдня України.",
+    en: "We support the military, run social projects, and provide information support for communities across southern Ukraine.",
+  },
+  primaryCta: {
+    uk: "Читати новини",
+    en: "Read news",
+  },
+  secondaryCta: {
+    uk: "Зв'язатися",
+    en: "Contact us",
+  },
+};
+
+export const aboutPoints = [
+  {
+    title: {
+      uk: "Допомога військовим",
+      en: "Military aid",
+    },
+    copy: {
+      uk: "Передаємо адресну підтримку, збираємо необхідне та працюємо там, де рішення потрібне без затримки.",
+      en: "We deliver direct support, gather what is needed, and work where decisions cannot wait.",
+    },
+  },
+  {
+    title: {
+      uk: "Соціальні проєкти",
+      en: "Social projects",
+    },
+    copy: {
+      uk: "Створюємо ініціативи для реабілітації, взаємодопомоги та відновлення людських зв'язків у громадах.",
+      en: "We build initiatives for rehabilitation, mutual aid, and stronger community ties.",
+    },
+  },
+  {
+    title: {
+      uk: "Інформаційна підтримка",
+      en: "Information support",
+    },
+    copy: {
+      uk: "Пояснюємо, куди звертатися, як отримати допомогу та як об'єднати людей навколо конкретної дії.",
+      en: "We explain where to turn, how to get support, and how to organize people around concrete action.",
+    },
+  },
+];
+
 export const featuredNews: BlogPost[] = [
   {
-    slug: "mobile-support-points-expanded",
-    title: "Mobile support points expanded across three frontline communities",
-    excerpt:
-      "New weekly stops will help families access legal guidance, emergency kits, and local coordinators without leaving their district.",
-    category: "Field Update",
-    publishedAt: "March 18, 2026",
-    readTime: "4 min read",
-    imageAlt: "Warm evening field and road symbolizing outreach routes",
-    heroClassName:
-      "bg-[linear-gradient(160deg,rgba(16,45,74,0.1),rgba(16,45,74,0.45)),radial-gradient(circle_at_75%_20%,rgba(249,212,105,0.95),rgba(249,212,105,0.05)_30%),linear-gradient(180deg,#7ba8d4_0%,#c5d5dc_48%,#d7aa49_100%)]",
+    slug: "rehabilitation-support-program",
+    title: {
+      uk: "Всебічна підтримка поранених: команда розширює напрям реабілітації",
+      en: "Comprehensive support for wounded defenders: rehabilitation work expands",
+    },
+    excerpt: {
+      uk: "Організація посилює напрям підтримки поранених військових через супровід, побутову допомогу та увагу до відновлення після лікування.",
+      en: "The organization is expanding support for wounded defenders through guidance, practical help, and rehabilitation-focused care.",
+    },
+    category: {
+      uk: "Головна новина",
+      en: "Featured news",
+    },
+    publishedAt: "March 21, 2026",
+    readTime: {
+      uk: "4 хв читання",
+      en: "4 min read",
+    },
+    imageAlt: {
+      uk: "Підтримка поранених військових",
+      en: "Support for wounded defenders",
+    },
+    imageSrc: "/pro-people/rehabilitation-support.jpg",
     content: [
-      "This spring, PRO PEOPLE added new mobile support stops in three communities where travel to regional centers remains difficult. Each route is designed around practical access: legal consultations, first response referrals, and direct links to local coordinators.",
-      "The new schedule was shaped with local partners who know where queues are growing and where families have started to fall through regular service networks. Instead of one-time visits, the organization is committing to repeat presence so trust can build over time.",
-      "The next phase will focus on clearer information materials and a simpler booking flow for partner organizations once the admin and backend are in place.",
+      {
+        uk: "ГО «Proлюдей» продовжує роботу поруч із пораненими військовими, допомагаючи не лише з побутовими запитами, а й з психологічною та інформаційною підтримкою. У центрі цього напряму не формальна послуга, а людська присутність.",
+        en: "NGO Pro People continues working alongside wounded defenders, helping not only with everyday needs but also with emotional and informational support. The core of this work is human presence, not a formal service.",
+      },
+      {
+        uk: "Команда планує розширювати партнерства з медичними та реабілітаційними ініціативами, щоб люди отримували більш цілісний супровід після складного лікування.",
+        en: "The team plans to expand partnerships with medical and rehabilitation initiatives so people receive more complete support after difficult treatment.",
+      },
     ],
     featured: true,
   },
   {
-    slug: "winterization-drive-neighborhood-hubs",
-    title: "Neighborhood hubs completed winterization drive ahead of schedule",
-    excerpt:
-      "Volunteer teams distributed heaters, insulation materials, and warm kits through local pickup points coordinated with residents.",
-    category: "Community Work",
-    publishedAt: "March 10, 2026",
-    readTime: "3 min read",
-    imageAlt: "Neighborhood support hub represented by blue and wheat gradient",
-    heroClassName:
-      "bg-[linear-gradient(155deg,rgba(14,49,82,0.12),rgba(14,49,82,0.5)),radial-gradient(circle_at_22%_18%,rgba(255,244,198,0.92),rgba(255,244,198,0.05)_26%),linear-gradient(180deg,#86aed4_0%,#d6d8cc_44%,#c2872d_100%)]",
+    slug: "team-coordination-south",
+    title: {
+      uk: "Команда в Одесі та Миколаєві посилює координацію локальних проєктів",
+      en: "Teams in Odesa and Mykolaiv strengthen coordination of local projects",
+    },
+    excerpt: {
+      uk: "Нові зустрічі з волонтерами та партнерами допомагають швидше погоджувати допомогу військовим і цивільним ініціативам.",
+      en: "New meetings with volunteers and partners help coordinate aid for military and civilian initiatives faster.",
+    },
+    category: {
+      uk: "Команда",
+      en: "Team",
+    },
+    publishedAt: "March 13, 2026",
+    readTime: {
+      uk: "3 хв читання",
+      en: "3 min read",
+    },
+    imageAlt: {
+      uk: "Команда ГО Proлюдей",
+      en: "NGO Pro People team",
+    },
+    imageSrc: "/pro-people/team-odessa-mykolaiv.jpg",
     content: [
-      "Local hubs coordinated a winterization drive that moved faster than expected because pickup windows were aligned with neighborhood routines. Families were able to collect supplies close to home instead of crossing the city for a single distribution point.",
-      "The work highlighted the value of small, well-run logistics rather than oversized one-day events. Reliable timing and familiar coordinators made the process calmer and easier to navigate.",
+      {
+        uk: "Координаційна робота між Одесою та Миколаєвом дає можливість швидше поєднувати людей, потреби та ресурси. Для організації це не просто логістика, а спосіб утримувати сталість у роботі.",
+        en: "Coordination between Odesa and Mykolaiv makes it easier to connect people, needs, and resources. For the organization, this is not just logistics but a way to sustain continuity.",
+      },
+      {
+        uk: "Наступний етап передбачає зручніший публічний формат новин та окрему адмін-панель для редакторів і команди.",
+        en: "The next stage includes a clearer public news flow and a dedicated admin panel for editors and the team.",
+      },
     ],
   },
   {
-    slug: "youth-story-lab-launch",
-    title: "Youth story lab launched to document community memory",
-    excerpt:
-      "A new media program will help young participants record oral histories, neighborhood change, and acts of mutual aid in their own words.",
-    category: "Programs",
-    publishedAt: "February 27, 2026",
-    readTime: "5 min read",
-    imageAlt: "Editorial blue and wheat background for storytelling initiative",
-    heroClassName:
-      "bg-[linear-gradient(155deg,rgba(12,41,66,0.15),rgba(12,41,66,0.54)),radial-gradient(circle_at_68%_16%,rgba(248,214,111,0.92),rgba(248,214,111,0.08)_28%),linear-gradient(180deg,#6f9fcc_0%,#b7c8d0_48%,#e2b24d_100%)]",
+    slug: "seed-quote-campaign",
+    title: {
+      uk: "«Ми - насіння»: нова візуальна кампанія про стійкість і взаємодопомогу",
+      en: "\"We are seeds\": a new visual campaign about resilience and mutual aid",
+    },
+    excerpt: {
+      uk: "Нова комунікаційна лінія об'єднує історії людей, які вистояли, допомагають іншим і продовжують тримати громади живими.",
+      en: "A new communication line brings together stories of people who endured, helped others, and kept communities alive.",
+    },
+    category: {
+      uk: "Кампанія",
+      en: "Campaign",
+    },
+    publishedAt: "February 28, 2026",
+    readTime: {
+      uk: "5 хв читання",
+      en: "5 min read",
+    },
+    imageAlt: {
+      uk: "Візуальна кампанія Ми - насіння",
+      en: "We are seeds visual campaign",
+    },
+    imageSrc: "/pro-people/we-are-seeds.jpg",
     content: [
-      "The story lab gives young people equipment, editorial support, and a framework for documenting how their communities are changing. The goal is not polished branding. It is memory, testimony, and local authorship.",
-      "The first cycle will focus on interviews with family members, volunteers, and neighborhood organizers. Selected stories will later appear in the public news feed once the editorial workflow is wired to the backend.",
+      {
+        uk: "Візуальна кампанія нагадує, що навіть після втрат люди знаходять у собі силу продовжувати, підтримувати ближніх і відновлювати спільноту навколо себе.",
+        en: "The campaign reminds us that even after loss, people find the strength to continue, support others, and rebuild community around them.",
+      },
+      {
+        uk: "У подальшому такі матеріали будуть публікуватися через адмін-панель і зберігатися в повноцінній стрічці новин сайту.",
+        en: "Later, materials like this will be published through the admin panel and stored in the full site news feed.",
+      },
     ],
-  },
-];
-
-export const aboutPoints = [
-  {
-    title: "Local first",
-    copy:
-      "We work with people already trusted in their communities, then build logistics and visibility around that local knowledge.",
-  },
-  {
-    title: "Clear coordination",
-    copy:
-      "We reduce noise, define responsibilities, and make it easier for partners to understand what is needed and what is already covered.",
-  },
-  {
-    title: "Longer continuity",
-    copy:
-      "Support matters more when it repeats. We focus on steady presence instead of one-off attention spikes.",
   },
 ];
 
 export const adminPreviewStats = [
-  { label: "Draft posts", value: "12" },
-  { label: "Published posts", value: "38" },
-  { label: "Pending review", value: "5" },
-  { label: "Editors online", value: "3" },
+  {
+    label: {
+      uk: "Чернетки",
+      en: "Drafts",
+    },
+    value: "12",
+  },
+  {
+    label: {
+      uk: "Опубліковано",
+      en: "Published",
+    },
+    value: "38",
+  },
+  {
+    label: {
+      uk: "На перевірці",
+      en: "In review",
+    },
+    value: "5",
+  },
+  {
+    label: {
+      uk: "Редактори онлайн",
+      en: "Editors online",
+    },
+    value: "3",
+  },
 ];
+
+export function t(text: LocalizedText, lang: Lang) {
+  return text[lang];
+}
 
 export function getPostBySlug(slug: string) {
   return featuredNews.find((post) => post.slug === slug);

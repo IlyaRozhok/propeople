@@ -18,5 +18,5 @@ export default async function Page({
     notFound();
   }
 
-  return <BlogPostPage lang="uk" post={post} />;
+  return <BlogPostPage lang="en" post={post} />;
 }
