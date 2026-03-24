@@ -18,8 +18,8 @@ export function LanguageSwitcher({
       className={[
         "inline-flex min-h-[2.6rem] items-center justify-center border px-3 text-[0.72rem] font-bold uppercase tracking-[0.22em] transition duration-200 hover:-translate-y-0.5",
         inverse
-          ? "border-[rgba(246,237,220,0.28)] text-cream hover:bg-[rgba(255,255,255,0.08)]"
-          : "border-[rgba(19,48,74,0.18)] text-ink hover:bg-[rgba(19,48,74,0.04)]",
+          ? "border-[rgba(248,246,241,0.28)] text-cream hover:bg-[rgba(255,255,255,0.08)]"
+          : "border-line text-ink hover:bg-[rgba(20,20,20,0.04)]",
       ].join(" ")}
     >
       {lang === "uk" ? "EN" : "UA"}

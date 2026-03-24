@@ -6,6 +6,15 @@
   --mid-shift: 0px;
   --back-shift: 0px;
   --front-shift: 0px;
+  --hero-image-shift: 0px;
+  --hero-copy-shift: 0px;
+  --paper: #f6f3ed;
+  --paper-strong: #fbfaf7;
+  --ink: #141414;
+  --muted: #5f5a52;
+  --line: rgba(20, 20, 20, 0.12);
+  --accent: #d4a62a;
+  --accent-soft: #f0e1ad;
 }
 
 * {
@@ -19,6 +28,9 @@ html {
 body {
   margin: 0;
   font-family: "Avenir Next", "Manrope", "Segoe UI", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  text-rendering: optimizeLegibility;
 }
 
 @layer components {
@@ -31,7 +43,35 @@ body {
   }
 
   .section-line {
-    @apply mb-4 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-[rgba(19,48,74,0.55)];
+    @apply mb-4 text-[0.78rem] font-bold uppercase tracking-[0.22em];
+    color: rgba(20, 20, 20, 0.46);
+  }
+
+  .ui-border {
+    border-color: var(--line);
+  }
+
+  .muted-copy {
+    color: var(--muted);
+  }
+
+  .soft-panel {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(18px);
+  }
+
+  .accent-rule {
+    position: relative;
+  }
+
+  .accent-rule::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4rem;
+    height: 2px;
+    background: var(--accent);
   }
 }
 

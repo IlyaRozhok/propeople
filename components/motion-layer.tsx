@@ -32,12 +32,11 @@ export function MotionLayer() {
       const rect = hero.getBoundingClientRect();
       const progress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
 
-      root.style.setProperty("--sun-shift", `${progress * 26}px`);
-      root.style.setProperty("--cloud-shift", `${progress * 18}px`);
-      root.style.setProperty("--mid-shift", `${progress * 24}px`);
-      root.style.setProperty("--back-shift", `${progress * 36}px`);
-      root.style.setProperty("--front-shift", `${progress * 52}px`);
-      root.style.setProperty("--grain-shift", `${progress * 70}px`);
+      root.style.setProperty("--mid-shift", `${progress * 26}px`);
+      root.style.setProperty("--back-shift", `${progress * 38}px`);
+      root.style.setProperty("--front-shift", `${progress * 56}px`);
+      root.style.setProperty("--hero-image-shift", `${progress * 44}px`);
+      root.style.setProperty("--hero-copy-shift", `${progress * -18}px`);
     };
 
     setHeroDepth();

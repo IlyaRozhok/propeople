@@ -16,7 +16,7 @@ export function MediaPhoto({
       role="img"
       aria-label={alt}
       className={[
-        "overflow-hidden bg-[#cda63f] bg-cover bg-center bg-no-repeat",
+        "overflow-hidden bg-accent bg-cover bg-center bg-no-repeat",
         className,
       ].join(" ")}
       style={{ backgroundImage: `url(${src})` }}
@@ -24,7 +24,7 @@ export function MediaPhoto({
       <div
         aria-hidden="true"
         className={[
-          "h-full w-full bg-[linear-gradient(180deg,rgba(17,44,68,0.18),rgba(17,44,68,0.08)_32%,rgba(17,44,68,0.22)_100%)]",
+          "h-full w-full bg-[linear-gradient(180deg,rgba(20,20,20,0.12),rgba(20,20,20,0.06)_32%,rgba(20,20,20,0.18)_100%)]",
           overlayClassName,
         ].join(" ")}
       />

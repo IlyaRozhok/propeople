@@ -210,6 +210,33 @@ export const featuredNews: BlogPost[] = [
   },
 ];
 
+export const partners = [
+  {
+    name: {
+      uk: "Локальні волонтерські ініціативи",
+      en: "Local volunteer initiatives",
+    },
+  },
+  {
+    name: {
+      uk: "Медичні та реабілітаційні команди",
+      en: "Medical and rehabilitation teams",
+    },
+  },
+  {
+    name: {
+      uk: "Гуманітарні штаби півдня",
+      en: "Southern humanitarian hubs",
+    },
+  },
+  {
+    name: {
+      uk: "Освітні та соціальні проєкти",
+      en: "Education and social projects",
+    },
+  },
+];
+
 export const adminPreviewStats = [
   {
     label: {
@@ -224,13 +251,6 @@ export const adminPreviewStats = [
       en: "Published",
     },
     value: "38",
-  },
-  {
-    label: {
-      uk: "На перевірці",
-      en: "In review",
-    },
-    value: "5",
   },
   {
     label: {
