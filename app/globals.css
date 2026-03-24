@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mid-shift: 0px;
+  --back-shift: 0px;
+  --front-shift: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Manrope", "Segoe UI", sans-serif;
+}
+
+@layer components {
+  .page-width {
+    width: min(calc(100% - 2.5rem), 1180px);
+  }
+
+  .hero-line {
+    @apply text-[0.78rem] font-bold uppercase tracking-[0.22em];
+  }
+
+  .section-line {
+    @apply mb-4 text-[0.78rem] font-bold uppercase tracking-[0.22em] text-[rgba(19,48,74,0.55)];
+  }
+}
+
+@media (max-width: 640px) {
+  .page-width {
+    width: min(calc(100% - 1.4rem), 1180px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
